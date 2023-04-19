@@ -42,7 +42,7 @@ if choice == "Viewer":
                 slide = open_slide(file_path)
                 region = (0, 0)
                 level = st.slider(label='Choose the level of image. the smaller the value, the higher the resolution',
-                                  min_value=2,
+                                  min_value=0,
                                   max_value=slide.level_count - 1,
                                   value=slide.level_count - 3)
                 size = slide.level_dimensions[level]
