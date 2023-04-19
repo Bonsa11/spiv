@@ -1,12 +1,8 @@
 import streamlit as st
 from PIL import Image
 import os
-import tempfile
-import openslide
 
-from openslide import ImageSlide, open_slide
-
-temp_dir = tempfile.TemporaryDirectory()
+from openslide import open_slide
 
 with st.sidebar:
     st.image('./Resources/logo.png')
