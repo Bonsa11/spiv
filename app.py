@@ -49,6 +49,7 @@ if choice == "Viewer":
                     if level <= 5:
                         st.warning('Bigger images will take longer to load, we recommend starting high and moving down if '
                                    'you need to')
+                    load_metadata = st.checkbox('Get Metadata', value=False)
                     if st.button('Load this image!'):
                         with st.spinner("Loading..."):
                             img = slide.read_region(region, level, size)
@@ -61,6 +62,8 @@ if choice == "Viewer":
                             except Image.DecompressionBombError as img2big:
                                 st.error('Image at this level is too big to load! increase the level and try again')
                                 os.remove(tmp_path)
+                            if load_metadata:
+                                st.text(dict(slide.properties))
 
             elif ext in ['tif', 'jpg', 'png', 'jpeg']:
                 if st.button('Load this image!'):
