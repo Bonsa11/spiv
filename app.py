@@ -63,7 +63,9 @@ if choice == "Viewer":
                                 st.error('Image at this level is too big to load! increase the level and try again')
                                 os.remove(tmp_path)
                             if load_metadata:
-                                st.text(dict(slide.properties))
+                                metadata = dict(slide.properties)
+                                metadata_as_str = '\n'.join([f'{key} : {metadata[key]}' for key in metadata])
+                                st.text(metadata_as_str)
 
             elif ext in ['tif', 'jpg', 'png', 'jpeg']:
                 if st.button('Load this image!'):
