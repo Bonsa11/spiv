@@ -20,7 +20,7 @@ if choice == "Viewer":
                  "see the docs")
 
     fldr = st.text_input("Add the path to folder with your images in here. \n\n This does have to be a network path "
-                         "that is accessible for a server").replace(r'\\uhb\appdata\leicabs\\','/mnt/uhb/')
+                         "that is accessible for a server").replace('\\','/').replace(r'//uhb/appdata/leicabs','/mnt/uhb/')
     if fldr:
         if not os.path.exists(fldr):
             st.error('Path to folder doesnt exist, try another one')
