@@ -7,3 +7,6 @@ def parse_folder_path(fldr: str):
 
     if '10.156.76.199' in fldr:
         return fldr.replace('\\','/').replace(r'//10.156.76.199/molecular_pathology_imaging','/mnt/molecular_pathology_imaging/')
+
+    else:
+        return fldr
