@@ -25,7 +25,7 @@ if choice == "Viewer":
                          "that is accessible for a server")
     if fldr:
         fldr = parse_folder_path(fldr)
-        st.text(fldr)
+        #st.text(fldr)
         if not os.path.exists(fldr):
             st.error('Path to folder doesnt exist, try another one')
         else:
